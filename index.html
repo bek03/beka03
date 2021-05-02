@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parad13{JS}</title>
+</head>
+<body>
+    <style>
+        input{
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+    <!-- <input type="" name="" id=""> -->
+
+    <!-- <input type="radio"> -->
+
+    <input type="text" id="text"  name="введите текст">
+    <!-- <input type="password" name="Пароль">
+    <input type="email" name="Email">
+    <input type="checkbox" name="каробка">
+    <input type="submit">
+    <input type="button" value="Кнопкаа"> -->
+    <!-- <input type="text"> -->
+    
+    <!-- <p id="inputText"></p> -->
+    <script>
+        let text = document.getElementById('text');
+            // inputText = document.getElementById('inputText');
+        // console.log(text);
+
+        // let inputs = [].slice.call(document.getElementsByTagName('input'));
+        // console.log(inputs);
+
+        var changeText = function() {
+            console.log(this.value);
+            // let p = document.createElement('p')
+            // p.textContent = this.value;
+            // text.after(p)
+            // inputText.textContent = this.value
+        }
+        //changeText.call(text);
+        // inputs.forEach(function(input) {                  
+        //     input.addEventListener('change', changeText, false);
+        // })
+        // text.addEventListener('change', changeText, false);
+
+        let focusin = function() {
+            console.log('Тыкнули на input! Можно вводить текст!');
+        },
+
+        focusout = function() {
+            console.log('Тыкнули вне input! Текст уже не введеешь!');
+        }
+
+        text.addEventListener('focus', focusin, false);
+        text.addEventListener('blur', focusout, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Девятое занятие</title>
+    <style>
+        input{
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id='text' placeholder="Введите имя" disabled/>
+    <!-- <input type="email"/>
+    <input type="password"/>
+    <input type="radioo"/>
+    <input type="checkbox"/>
+    <input type="submit"/>
+    <input type="button" value="Кнопка"> -->
+    <!-- <p id="inputText"></p> -->
+    <script>
+        var text = document.getElementById('text');
+        // inputText = document.getElementById('inputText');
+        // console.log(text);
+        // var inputs = [].slice.call(document.getElementsByTagName('input'));
+        // console.log(inputs);
+        var changeText = function() {
+            console.log(this.value);
+            // var p = document.createElement('p');
+            // p.textContent = this.value;
+            // text.after(p)
+            // inputText.textContent = this.value;
+        }
+        // 
+changeText.call
+(text);
+        // inputs.forEach(function(input) {
+        //     input.addEventListener('change', changeText, false);
+        // })
+        // text.addEventListener('change', changeText, false);
+
+        var focusin = function(){
+            console.log('Тыкнули на input! Можно вводить текст!');
+        },
+
+        focusout = function(){
+            console.log('Тыкнули вне input! Текст уже не введешь!');
+        }
+
+        text.addEventListener('focus', focusin, false);
+        text.addEventListener('blur', focusout, false);
+    </script>
+</body>     
+</html>

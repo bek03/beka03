@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Форма обратной связи</title>
+    <link rel="preconnect" href="
+https://fonts.gstatic.com
+">
+    <link href="
+https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap
+" rel="stylesheet">
+    <style>
+        /* #c6ff00
+        #ff6f00 */
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Antonio', sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .form-conteiner {
+            background-color: #fff;
+            max-width: 450px;
+            width: 95%;
+            margin: auto;
+            padding: 40px;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.4rem 0;
+            outline: none;
+            font-size: 1rem;
+            letter-spacing: 0.75px;
+            border: none;
+            border-bottom: 1.5px solid rgb(200, 200, 200);
+            border-radius: 0;
+            transition: 0.2s ease;
+            -webkit-appearance: none;
+        }
+
+        input:focus {
+            border-color: #00ff9d;
+            border-color: rgb(255, 191, 2);
+        }
+
+        .form-heading {
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.75px;
+        }
+
+        #submit {
+            border: none;
+            background-color: rgb(255, 191, 2);
+            color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+            padding: 0 6rem 0;
+            width: 150px;
+            margin-left: calc (100% - 150px);
+            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.2s ease;
+            margin-top: 1.5rem;
+        }
+
+        #submit:active {
+            transform: translate (2px, 2px);
+            box-shadow: none;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 0.75px;
+            color: rgb(68, 68, 68);
+            transform: translateY(2rem);
+            transition: 0.2s ease;
+        }
+
+        .focused {
+            transform: translateX(-12.5%) translateY(0.5rem) scale(0.75);
+        }
+
+            input- webkit-autofill {
+                -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+            }
+            
+            
+
+        .focused {
+            transform: translateX(-12.5%) translateY(0.2rem) scale(0.75);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-conteiner">
+        <h3 class="form-heading">Формочка</h3>
+        <form action="" id="form">
+            <div class="field">
+                <label for="name" class="focused">Имя</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input type="text" name="_repluto" id="email">
+            </div>
+
+            <label for="submit">Отправить</label>
+            <input  type="button" id="submit">
+        </form>
+    </div>
+    <script>
+        let inputs = [].slice.call(document.querySelectorAll('input'));
+        inputs.forEach(function(input) {
+            if (input.getAttribute('type') !== 'submit' && input.getAttribute ('type') !== 'hidden') {
+                console.log(input);
+                if (input.value != '')
+                    let label = document.querySelector('laber[for="' + input.id + '"]')
+                    label.classList.add('focused')
+                input.addEventListener('focusin', focusinInputHandler, false);
+                input.addEventListener('focusout', focusinInputHandler, false);
+            
+        }
+        });
+
+        function focusinInputHandler() {
+            let label = document.querySelector('label[for="' + this.id + '"]');
+            if (this.value == '')
+            label.classList.remove ('focused');
+            // console.log(label);
+            // console.log(this.id + 'fokus in');
+        }
+
+
+        function focusinInputHandler() {
+            console.log(this.id + 'fokus out');
+        }
+    </script>
+</body>
+</html>
